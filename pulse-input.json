@@ -1,0 +1,8 @@
+{
+  "issues": [
+    { "number": 12, "labels": ["bug"], "stale": false },
+    { "number": 18, "labels": [], "stale": true }
+  ],
+  "pullRequests": [{ "number": 21, "state": "open" }],
+  "checks": [{ "name": "tests", "status": "success" }]
+}

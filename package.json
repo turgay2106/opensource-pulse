@@ -1,0 +1,11 @@
+{
+  "name": "opensource-pulse",
+  "version": "0.1.0",
+  "description": "A dependency-free GitHub Action that produces practical open-source maintenance reports.",
+  "type": "module",
+  "bin": { "opensource-pulse": "src/cli.js" },
+  "scripts": { "test": "node --test", "start": "node src/cli.js" },
+  "keywords": ["github-action", "open-source", "maintainer", "issue-triage", "pull-request"],
+  "license": "MIT",
+  "engines": { "node": ">=20" }
+}
