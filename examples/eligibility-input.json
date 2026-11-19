@@ -1,0 +1,21 @@
+{
+  "username": "example-dev",
+  "pullRequests": [
+    { "repo": "nodejs/node", "number": 50123, "title": "doc: fix example in fs.readFile", "mergedAt": "2026-11-12T10:00:00Z" },
+    { "repo": "nodejs/node", "number": 50310, "title": "test: add regression test for url.parse", "mergedAt": "2026-10-28T09:30:00Z" },
+    { "repo": "expressjs/express", "number": 6001, "title": "fix: handle empty query string", "mergedAt": "2026-10-02T15:12:00Z" },
+    { "repo": "vitest-dev/vitest", "number": 7044, "title": "docs: clarify coverage options", "mergedAt": "2026-09-15T08:00:00Z" },
+    { "repo": "example-dev/my-lib", "number": 12, "title": "own repo PR (not counted)", "mergedAt": "2026-11-01T12:00:00Z" }
+  ],
+  "repository": {
+    "fullName": "example-dev/my-lib",
+    "description": "a lightweight rate-limiting middleware for Express",
+    "stars": 340,
+    "monthlyDownloads": 18000,
+    "registry": "npm",
+    "dependentRepos": 85,
+    "externalContributors": 7,
+    "releasesLastYear": 5,
+    "role": "primary"
+  }
+}
