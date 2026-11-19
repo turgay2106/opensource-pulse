@@ -1,11 +1,30 @@
 {
   "name": "opensource-pulse",
-  "version": "0.1.0",
-  "description": "A dependency-free GitHub Action that produces practical open-source maintenance reports.",
+  "version": "0.2.0",
+  "description": "Dependency-free tools for open-source maintainers and contributors: maintenance reports and OSS program eligibility tracking.",
   "type": "module",
-  "bin": { "opensource-pulse": "src/cli.js" },
-  "scripts": { "test": "node --test", "start": "node src/cli.js" },
-  "keywords": ["github-action", "open-source", "maintainer", "issue-triage", "pull-request"],
+  "bin": {
+    "opensource-pulse": "src/cli.js",
+    "oss-eligibility": "src/eligibility-cli.js"
+  },
+  "scripts": {
+    "test": "node --test",
+    "start": "node src/cli.js",
+    "eligibility": "node src/eligibility-cli.js",
+    "example": "node src/eligibility-cli.js --input examples/eligibility-input.json --out oss-eligibility.md"
+  },
+  "keywords": [
+    "github-action",
+    "open-source",
+    "maintainer",
+    "issue-triage",
+    "pull-request",
+    "claude-for-oss",
+    "codex-for-oss",
+    "contributions"
+  ],
   "license": "MIT",
-  "engines": { "node": ">=20" }
+  "engines": {
+    "node": ">=20"
+  }
 }

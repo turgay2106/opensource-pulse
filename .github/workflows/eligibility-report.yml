@@ -1,0 +1,38 @@
+name: OSS eligibility report
+on:
+  workflow_dispatch:
+    inputs:
+      username:
+        description: GitHub kullanıcı adı
+        required: true
+      repo:
+        description: Bakımını yaptığın repo (owner/name, opsiyonel)
+        required: false
+  schedule:
+    - cron: '17 7 * * 1' # her pazartesi
+
+permissions:
+  contents: read
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Raporu üret
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ inputs.username || github.repository_owner }}
+          REPO: ${{ inputs.repo }}
+        run: |
+          ARGS=(--user "$USERNAME" --out oss-eligibility.md)
+          if [ -n "$REPO" ]; then ARGS+=(--repo "$REPO"); fi
+          node src/eligibility-cli.js "${ARGS[@]}"
+          cat oss-eligibility.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: oss-eligibility-report
+          path: oss-eligibility.md
